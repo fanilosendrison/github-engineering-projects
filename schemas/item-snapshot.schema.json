@@ -1,0 +1,76 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"project": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"minLength": 1
+				},
+				"number": {
+					"type": "integer",
+					"exclusiveMinimum": 0,
+					"maximum": 9007199254740991
+				},
+				"owner": {
+					"type": "string",
+					"minLength": 1
+				},
+				"title": {
+					"type": "string",
+					"minLength": 1
+				},
+				"url": {
+					"type": "string",
+					"format": "uri"
+				}
+			},
+			"required": ["id", "number", "owner", "title"],
+			"additionalProperties": false
+		},
+		"issue": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"minLength": 1
+				},
+				"number": {
+					"type": "integer",
+					"exclusiveMinimum": 0,
+					"maximum": 9007199254740991
+				},
+				"repository": {
+					"type": "string",
+					"pattern": "^[^/]+\\/[^/]+$"
+				}
+			},
+			"required": ["id", "number", "repository"],
+			"additionalProperties": false
+		},
+		"itemId": {
+			"type": "string",
+			"minLength": 1
+		},
+		"fields": {
+			"type": "object",
+			"propertyNames": {
+				"type": "string"
+			},
+			"additionalProperties": {
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "null"
+					}
+				]
+			}
+		}
+	},
+	"required": ["project", "issue", "itemId", "fields"],
+	"additionalProperties": false
+}

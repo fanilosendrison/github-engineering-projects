@@ -1,0 +1,32 @@
+{
+	"name": "github-engineering-projects",
+	"version": "0.1.0",
+	"description": "Verified mechanical GitHub Project operations for coding-agent workflows.",
+	"type": "module",
+	"private": true,
+	"license": "MIT",
+	"bin": {
+		"github-engineering-projects": "bin/github-engineering-projects.mjs"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json && node scripts/generate-schemas.mjs && biome format --write schemas && node scripts/build-node.mjs",
+		"generate:schemas": "tsc -p tsconfig.build.json && node scripts/generate-schemas.mjs && biome format --write schemas",
+		"install:standalone": "pnpm run build && node scripts/install-standalone.mjs",
+		"lint": "biome check .",
+		"test": "node tests/run-tests.mjs",
+		"typecheck": "tsc --noEmit -p tsconfig.json"
+	},
+	"dependencies": {
+		"zod": "4.3.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.2",
+		"@types/node": "22.20.0",
+		"typescript": "5.9.3"
+	},
+	"engines": {
+		"node": ">=22.19.0",
+		"pnpm": "11.24.0"
+	},
+	"packageManager": "pnpm@11.24.0"
+}

@@ -1,0 +1,94 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"schemaVersion": {
+			"type": "number",
+			"const": 1
+		},
+		"command": {
+			"type": "string",
+			"minLength": 1
+		},
+		"outcome": {
+			"type": "string",
+			"enum": ["inspected", "applied", "noop"]
+		},
+		"target": {
+			"type": "object",
+			"propertyNames": {
+				"type": "string"
+			},
+			"additionalProperties": {
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "number"
+					}
+				]
+			}
+		},
+		"request": {
+			"type": "object",
+			"propertyNames": {
+				"type": "string"
+			},
+			"additionalProperties": {
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "number"
+					},
+					{
+						"type": "boolean"
+					}
+				]
+			}
+		},
+		"before": {
+			"anyOf": [
+				{},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"after": {
+			"anyOf": [
+				{},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"postcondition": {
+			"type": "object",
+			"properties": {
+				"verified": {
+					"type": "boolean"
+				},
+				"description": {
+					"type": "string",
+					"minLength": 1
+				}
+			},
+			"required": ["verified", "description"],
+			"additionalProperties": false
+		}
+	},
+	"required": [
+		"schemaVersion",
+		"command",
+		"outcome",
+		"target",
+		"request",
+		"before",
+		"after",
+		"postcondition"
+	],
+	"additionalProperties": false
+}
