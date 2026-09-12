@@ -65,4 +65,3 @@ github-engineering-projects dependency add-blocker --repo <owner/repository> --i
 
 See [the CLI contract](docs/cli-contract.md) and
 [the architecture](docs/architecture.md) for authority and output guarantees.
-# test
