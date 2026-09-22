@@ -18,6 +18,9 @@ It does not decide workflow status, priority, readiness, Issue scope, or product
 semantics. Those decisions remain with the invoking agent policy and the target
 repository's Engineering Project profile.
 
+Repository Issue and Project work follows the
+[GPE Engineering governance profile](docs/repository-governance/gpe-engineering.md).
+
 ## Requirements
 
 - Node.js 22.19.0 or newer
