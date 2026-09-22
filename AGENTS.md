@@ -26,15 +26,6 @@ finding.
 Do not parse repository Markdown profiles. Callers must pass exact routing,
 field, option, Issue, and relationship inputs.
 
-## GitHub Engineering Project
-
-For Issue, Project, backlog, agent-queue, or finding work, apply the shared
-GitHub Engineering Projects operational protocol and
-[`docs/repository-governance/gpe-engineering.md`](docs/repository-governance/gpe-engineering.md).
-Resolve unqualified Issue numbers against this repository. Keep mutable work
-state in the live Project and native GitHub relationships; do not mirror it in
-repository dashboards or Issue prose.
-
 ## Runtime requirements
 
 - Require Node.js 22.19.0 or newer and pnpm 11.24.0 for development.
