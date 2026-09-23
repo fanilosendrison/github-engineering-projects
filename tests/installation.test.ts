@@ -27,10 +27,7 @@ async function makeFixture(): Promise<{
 	const binHome = path.join(root, "bin-home");
 	await mkdir(path.join(payloadRoot, "bin"), { recursive: true });
 	await mkdir(path.join(payloadRoot, "dist"), { recursive: true });
-	await writeFile(
-		path.join(payloadRoot, "bin", "proto-lithify.mjs"),
-		"launcher\n",
-	);
+	await writeFile(path.join(payloadRoot, "bin", "proto-lithify.mjs"), "launcher\n");
 	await writeFile(path.join(payloadRoot, "dist", "cli.mjs"), "runtime\n");
 	return { payloadRoot, dataHome, binHome };
 }
@@ -68,21 +65,12 @@ describe("standalone installation", () => {
 
 		assert.strictEqual(second.releaseDirectory, first.releaseDirectory);
 		assert.strictEqual(
-			await readlink(
-				path.join(fixture.dataHome, "proto-lithify", "current"),
-			),
+			await readlink(path.join(fixture.dataHome, "proto-lithify", "current")),
 			path.join("releases", path.basename(first.releaseDirectory)),
 		);
 		assert.strictEqual(
 			await readlink(path.join(fixture.binHome, "proto-lithify")),
-			path.join(
-				"..",
-				"data",
-				"proto-lithify",
-				"current",
-				"bin",
-				"proto-lithify.mjs",
-			),
+			path.join("..", "data", "proto-lithify", "current", "bin", "proto-lithify.mjs"),
 		);
 	});
 });
