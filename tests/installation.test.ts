@@ -28,7 +28,7 @@ async function makeFixture(): Promise<{
 	await mkdir(path.join(payloadRoot, "bin"), { recursive: true });
 	await mkdir(path.join(payloadRoot, "dist"), { recursive: true });
 	await writeFile(
-		path.join(payloadRoot, "bin", "github-engineering-projects.mjs"),
+		path.join(payloadRoot, "bin", "proto-lithify.mjs"),
 		"launcher\n",
 	);
 	await writeFile(path.join(payloadRoot, "dist", "cli.mjs"), "runtime\n");
@@ -63,25 +63,25 @@ async function makeTreeWritable(directory: string): Promise<void> {
 describe("standalone installation", () => {
 	it("installs an immutable release and stable links", async () => {
 		const fixture = await makeFixture();
-		const first = await installStandalone({ ...fixture, version: "0.1.0" });
-		const second = await installStandalone({ ...fixture, version: "0.1.0" });
+		const first = await installStandalone({ ...fixture, version: "0.2.0" });
+		const second = await installStandalone({ ...fixture, version: "0.2.0" });
 
 		assert.strictEqual(second.releaseDirectory, first.releaseDirectory);
 		assert.strictEqual(
 			await readlink(
-				path.join(fixture.dataHome, "github-engineering-projects", "current"),
+				path.join(fixture.dataHome, "proto-lithify", "current"),
 			),
 			path.join("releases", path.basename(first.releaseDirectory)),
 		);
 		assert.strictEqual(
-			await readlink(path.join(fixture.binHome, "github-engineering-projects")),
+			await readlink(path.join(fixture.binHome, "proto-lithify")),
 			path.join(
 				"..",
 				"data",
-				"github-engineering-projects",
+				"proto-lithify",
 				"current",
 				"bin",
-				"github-engineering-projects.mjs",
+				"proto-lithify.mjs",
 			),
 		);
 	});

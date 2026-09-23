@@ -2,12 +2,12 @@
 okf_version: "1.0"
 kind: "KnowledgeAsset"
 asset_type: "agent-directives"
-domain: "github-engineering-projects"
+domain: "proto-lithify"
 severity: "strict"
-name: "GitHub Engineering Projects contributor directives"
+name: "Proto-Lithify contributor directives"
 ---
 
-# GitHub Engineering Projects contributor directives
+# Proto-Lithify contributor directives
 
 ## Mission
 
@@ -55,10 +55,10 @@ below 400 physical lines.
 
 ## Installation boundary
 
-Install releases under `$XDG_DATA_HOME/github-engineering-projects`, falling
-back to `~/.local/share/github-engineering-projects`. Preserve immutable releases
-and atomically switch the relative `current` symlink. Keep the stable public
-launcher at `~/.local/bin/github-engineering-projects`.
+Install releases under `$XDG_DATA_HOME/proto-lithify`, falling back to
+`~/.local/share/proto-lithify`. Preserve immutable releases and atomically switch
+the relative `current` symlink. Keep the stable public launcher at
+`~/.local/bin/proto-lithify`.
 
 The installed runtime must not invoke pnpm or consult the source checkout.
 
@@ -79,7 +79,7 @@ pnpm run typecheck
 pnpm test
 pnpm run build
 pnpm run install:standalone
-"$HOME/.local/bin/github-engineering-projects" doctor
+"$HOME/.local/bin/proto-lithify" doctor
 
 git diff --check
 ```

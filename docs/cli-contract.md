@@ -2,10 +2,10 @@
 okf_version: "1.0"
 kind: "KnowledgeAsset"
 asset_type: "contract"
-domain: "github-engineering-projects"
+domain: "proto-lithify"
 severity: "strict"
-name: "GitHub Engineering Projects CLI contract"
-version: "0.1.0"
+name: "Proto-Lithify CLI contract"
+version: "0.2.0"
 ---
 
 # CLI contract

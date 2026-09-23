@@ -2,10 +2,10 @@
 okf_version: "1.0"
 kind: "KnowledgeAsset"
 asset_type: "architecture"
-domain: "github-engineering-projects"
+domain: "proto-lithify"
 severity: "strict"
-name: "GitHub Engineering Projects architecture"
-version: "0.1.0"
+name: "Proto-Lithify architecture"
+version: "0.2.0"
 ---
 
 # Architecture
@@ -46,6 +46,6 @@ field, option, and Issue IDs are discovered from live state for each operation.
 
 ## Exclusions
 
-Version 0.1.0 has no LLM, daemon, SQLite database, Turnlock workflow, profile
+Version 0.2.0 has no LLM, daemon, SQLite database, Turnlock workflow, profile
 parser, work selector, or GitHub command enforcer. Multi-command transactions
 are not claimed; each command exposes and verifies only its own effect.

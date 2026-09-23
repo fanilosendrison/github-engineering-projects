@@ -2,10 +2,10 @@
 okf_version: "1.0"
 kind: "KnowledgeAsset"
 asset_type: "documentation"
-domain: "github-engineering-projects"
+domain: "proto-lithify"
 severity: "guideline"
-name: "GitHub Engineering Projects standalone installation"
-version: "0.1.0"
+name: "Proto-Lithify standalone installation"
+version: "0.2.0"
 ---
 
 # Standalone installation
@@ -16,7 +16,7 @@ an immutable version-and-digest directory, and atomically selects it through the
 relative `current` symlink.
 
 The public executable is the stable symlink
-`~/.local/bin/github-engineering-projects`. An existing unmanaged file or
+`~/.local/bin/proto-lithify`. An existing unmanaged file or
 symlink at that path causes installation to fail closed.
 
 Old releases are preserved. Rollback consists of atomically selecting a

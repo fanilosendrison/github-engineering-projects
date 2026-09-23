@@ -37,4 +37,4 @@ await writeFile(
 		2,
 	)}\n`,
 );
-await chmod(path.join(releaseRoot, "bin", "github-engineering-projects.mjs"), 0o755);
+await chmod(path.join(releaseRoot, "bin", "proto-lithify.mjs"), 0o755);

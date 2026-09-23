@@ -9,7 +9,7 @@ const supported =
 
 if (!supported) {
 	process.stderr.write(
-		`github-engineering-projects requires Node.js >= 22.19.0; found ${process.versions.node}.\n`,
+		`proto-lithify requires Node.js >= 22.19.0; found ${process.versions.node}.\n`,
 	);
 	process.exitCode = 2;
 } else {

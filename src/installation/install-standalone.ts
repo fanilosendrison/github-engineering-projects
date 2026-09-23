@@ -13,8 +13,8 @@ import {
 import path from "node:path";
 import { computeTreeDigest } from "./tree-digest.ts";
 
-const APPLICATION_NAME = "github-engineering-projects";
-const EXECUTABLE_NAME = "github-engineering-projects";
+const APPLICATION_NAME = "proto-lithify";
+const EXECUTABLE_NAME = "proto-lithify";
 
 export interface InstallStandaloneRequest {
 	readonly payloadRoot: string;
